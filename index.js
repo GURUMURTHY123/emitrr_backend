@@ -11,6 +11,7 @@ const dbPath = path.join(__dirname, "./userData.db");
 const secretKey = "MY_TOKEN";
 
 app.use(express.json());
+app.use(cors())
 
 const initializeDbAndServer = async () => {
   try {
