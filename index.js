@@ -69,8 +69,8 @@ app.post("/register", async (req, res) => {
 app.get("/user", validateUser, async (req, res) => {
   const { username } = req;
   const getUserQuery = `select * from user where username="${username}"`;
-  const response = await db.get(getUserQuery);
-  res.send({response});
+  const userData = await db.get(getUserQuery);
+  res.send({data: userData});
 });
 
 app.post("/update_score", validateUser, async (req, res) => {
