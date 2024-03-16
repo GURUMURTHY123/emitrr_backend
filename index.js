@@ -70,7 +70,7 @@ app.get("/user", validateUser, async (req, res) => {
   const { username } = req;
   const getUserQuery = `select * from user where username="${username}"`;
   const response = await db.get(getUserQuery);
-  res.send(response);
+  res.send({response});
 });
 
 app.post("/update_score", validateUser, async (req, res) => {
