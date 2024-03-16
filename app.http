@@ -1,0 +1,22 @@
+###
+POST http://localhost:3000/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "Ram"
+}
+
+###
+
+GET http://localhost:3000/user HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlJhanUiLCJpYXQiOjE3MTA1Njk2MDB9.gvvqYxxX23uVhYDUlIGuiy-R9bXnxRy5qMpWAWVvc7k
+
+
+###
+POST http://localhost:3000/update_score HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlJhanUiLCJpYXQiOjE3MTA1Njk2MDB9.gvvqYxxX23uVhYDUlIGuiy-R9bXnxRy5qMpWAWVvc7k
+
+{
+    "score" : 10
+}
