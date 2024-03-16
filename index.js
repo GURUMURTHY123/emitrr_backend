@@ -10,18 +10,15 @@ let db = null;
 const dbPath = path.join(__dirname, "./userData.db");
 const secretKey = "MY_TOKEN";
 
-app.use(express.json());
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+app.use(cors({
+  origin: '*', // Replace with your allowed origin
+  methods: ['GET', 'POST'], // Specify allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], 
+}));
 
-app.use(
-  cors({
-    methods: ["GET", "POST"],
-  })
-);
+app.options('*', cors());
+
+app.use(express.json());
 
 const initializeDbAndServer = async () => {
   try {
