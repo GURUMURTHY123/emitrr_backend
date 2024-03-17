@@ -10,13 +10,15 @@ let db = null;
 const dbPath = path.join(__dirname, "./userData.db");
 const secretKey = "MY_TOKEN";
 
-app.use(cors({
-  origin: '*', // Replace with your allowed origin
-  methods: ['GET', 'POST'], // Specify allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'], 
-}));
+app.use(
+  cors({
+    origin: "*", // Replace with your allowed origin
+    methods: ["GET", "POST"], // Specify allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization", "Accept"],
+  })
+);
 
-app.options('*', cors());
+app.options("*", cors());
 
 app.use(express.json());
 
@@ -70,7 +72,7 @@ app.get("/user", validateUser, async (req, res) => {
   const { username } = req;
   const getUserQuery = `select * from user where username="${username}"`;
   const userData = await db.get(getUserQuery);
-  res.send({data: userData});
+  res.send({ data: userData });
 });
 
 app.post("/update_score", validateUser, async (req, res) => {
@@ -83,6 +85,7 @@ app.post("/update_score", validateUser, async (req, res) => {
 app.get("/leader_board", validateUser, async (req, res) => {
   const getLeaderBoard = `Select * from user order by score desc limit 10`;
   const response = await db.all(getLeaderBoard);
+  res.send({ leaderBoardList: response });
 });
 
 initializeDbAndServer();

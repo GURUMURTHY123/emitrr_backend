@@ -9,8 +9,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/user HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlJhanUiLCJpYXQiOjE3MTA1Njk2MDB9.gvvqYxxX23uVhYDUlIGuiy-R9bXnxRy5qMpWAWVvc7k
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlJhbSIsImlhdCI6MTcxMDU5Nzg5MX0.xCAQc0jKHlQi5tE0wxwBkF6i_uCD33aoFtX0U9xHHPo
 
 ###
 POST http://localhost:3000/update_score HTTP/1.1
